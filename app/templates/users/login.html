@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CBS login form</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <meta name="HandheldFriendly" content="true">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+      html, body {
+      display: flex;
+      justify-content: center;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 15px;
+      }
+      form {
+      border: 5px solid #00D2BE;
+      }
+      input[type=text], input[type=password] {
+      width: 100%;
+      padding: 16px 8px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      }
+      button {
+        background-color: #4286f4;
+        color: white;
+        padding: 10px 0 ;
+        margin: 10px 80px;
+        border: none;
+        cursor: grab;
+        width: 48%;
+        border-radius: 5px;
+
+
+
+      }
+      h1 {
+      text-align:center;
+      fone-size:18;
+      }
+      button:hover {
+      opacity: 0.8;
+      }
+      .formcontainer {
+      text-align: left;
+      margin: 24px 50px 12px;
+      }
+      .container {
+      padding: 6px 0;
+      text-align:left;
+      }
+      span.psw {
+      float: right;
+      padding-top: 0;
+      padding-right: 15px;
+      }
+      /* Change styles for span on extra small screens */
+      @media screen and (max-width: 300px) {
+      span.psw {
+      display: block;
+      float: none;
+      }
+    </style>
+  </head>
+  <body>
+  {% load bootstrap3 %}
+  <form method="post" novalidate>
+  {% csrf_token %}
+    {{ form }}
+    <button type="submit">Submit</button>
+    </form>
+
+
+      </div>
+
+      <button type="submit">Login</button>
+      <div class="container" style="background-color: #eee">
+        <label style="padding-left: 15px">
+        <a href="{%url 'password_reset'%}">Forgot Password?</a>
+        </label>
+        <span class="psw"><a href="{%url 'register_user' %}"> Acount Register?</a></span>
+      </div>
+    </form>
+  </body>
+</html>
